@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Multimodal Interaction</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #d9f0ff 0%, #a1c4fd 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image:
+                repeating-linear-gradient(
+                    45deg,
+                    rgba(255, 255, 255, 0.1),
+                    rgba(255, 255, 255, 0.1) 10px,
+                    rgba(255, 255, 255, 0.05) 10px,
+                    rgba(255, 255, 255, 0.05) 20px
+                );
+            pointer-events: none;
+            z-index: 0;
+        }
+        h1 {
+            margin-bottom: 40px;
+            color: #004a99;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            position: relative;
+        }
+        .button-container {
+            display: flex;
+            gap: 60px;
+            z-index: 1;
+            position: relative;
+        }
+        .button-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 150px;
+        }
+        button {
+            background-color: #007acc;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 122, 204, 0.4);
+        }
+        button:hover {
+            background-color: #005f99;
+            box-shadow: 0 6px 12px rgba(0, 95, 153, 0.6);
+        }
+        #textCommandContainer {
+            margin-top: 50px;
+            width: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1;
+            position: relative;
+        }
+        #textInput {
+            padding: 12px 15px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1.5px solid #007acc;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        #textInput:focus {
+            border-color: #005f99;
+            box-shadow: 0 0 6px #005f99;
+        }
+        /* Status message style */
+        #statusMessage {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #004a99;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0, 74, 153, 0.6);
+            opacity: 0.9;
+            z-index: 100;
+            min-width: 220px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Multimodal Interaction</h1>
+    <div class="button-container">
+        <div class="button-column">
+            <button onclick="startGesture()">Gesture Recognition</button>
+            <button onclick="startVoice()">Voice Command</button>
+        </div>
+        <div class="button-column">
+            <button onclick="startText()">Text Command</button>
+            <button onclick="startFacial()">Facial Recognition</button>
+        </div>
+    </div>
+
+    <div id="textCommandContainer">
+        <input type="text" id="textInput" placeholder="Type your command here: e.g. open youtube or search cats" />
+        <button onclick="processTextCommand()">Submit</button>
+    </div>
+
+    <!-- Status message box -->
+    <div id="statusMessage" style="display:none;"></div>
+
+    <script>
+        const statusDiv = document.getElementById('statusMessage');
+
+        function showStatus(message) {
+            statusDiv.textContent = message;
+            statusDiv.style.display = 'block';
+            // Hide after 3 seconds
+            setTimeout(() => {
+                statusDiv.style.display = 'none';
+            }, 3000);
+        }
+
+        function startGesture() {
+            showStatus("Gesture recognition started...");
+            // Redirect after short delay so message is visible
+            setTimeout(() => {
+                location.href = '/gesture';
+            }, 500);
+        }
+
+        function startVoice() {
+            showStatus("Voice recognition started...");
+            setTimeout(() => {
+                location.href = '/voice';
+            }, 500);
+        }
+
+        function startText() {
+            showStatus("Text command page opened.");
+            setTimeout(() => {
+                location.href = '/text';
+            }, 500);
+        }
+
+        function startFacial() {
+            showStatus("Facial recognition started...");
+            setTimeout(() => {
+                location.href = '/facial';
+            }, 500);
+        }
+
+        function processTextCommand() {
+            const input = document.getElementById('textInput').value.toLowerCase().trim();
+            if (!input) {
+                alert('Please enter a command.');
+                return;
+            }
+
+            showStatus("Processing text command...");
+
+            if (input.startsWith('open ')) {
+                let website = input.slice(5).trim();
+                website = website.replace(/\s+/g, '');
+                if (website) {
+                    window.open(`https://${website}.com`, '_blank');
+                } else {
+                    alert('Please specify a website to open.');
+                }
+            } else if (input.startsWith('search ')) {
+                const query = encodeURIComponent(input.slice(7).trim());
+                if (query) {
+                    window.open(`https://www.google.com/search?q=${query}`, '_blank');
+                } else {
+                    alert('Please specify a search query.');
+                }
+            } else {
+                alert('Command not recognized. Use "open <website>" or "search <query>".');
+            }
+        }
+    </script>
+</body>
+</html>
