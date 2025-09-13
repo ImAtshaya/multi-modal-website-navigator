@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue) ![Tkinter](https://img.shields.io/badge/Tkinter-GUI-green) ![OpenCV](https://img.shields.io/badge/OpenCV-4.x-orange) ![MediaPipe](https://img.shields.io/badge/MediaPipe-Hand%20Gestures-red) ![TensorFlow Lite](https://img.shields.io/badge/TensorFlow%20Lite-ML-purple)
 
----
+
 
 ## 🧠 Project Overview
 This project is an **intelligent system** that allows users to interact with and navigate websites using **three modes of input**:
@@ -13,7 +13,7 @@ This project is an **intelligent system** that allows users to interact with and
 
 It enhances accessibility and provides a hands-free experience by integrating **speech recognition**, **computer vision**, and **GUI-based navigation** using **Python**.
 
----
+
 
 ## 🛠️ Technologies & Tools Used
 - **Programming Language:** Python  
@@ -26,7 +26,7 @@ It enhances accessibility and provides a hands-free experience by integrating **
 - **IDE:** VS Code / PyCharm  
 - **Operating System:** Windows
 
----
+
 
 ## 🧩 Modules and Components
 
@@ -51,7 +51,7 @@ It enhances accessibility and provides a hands-free experience by integrating **
 - Centralized control panel with buttons to activate each feature.  
 - Built using Tkinter for a simple, interactive interface.
 
----
+
 
 ## 🧪 Implementation Flow
 1. User launches the main GUI (`main_gui.py`).  
@@ -62,7 +62,7 @@ It enhances accessibility and provides a hands-free experience by integrating **
    - **Gesture input:** Webcam recognizes hand gestures and opens websites.  
 4. Feedback and errors are shown via GUI messages or print statements.
 
----
+
 
 ## 🌟 Key Features
 - Multi-modal control (Text, Voice, Gesture)  
@@ -71,7 +71,7 @@ It enhances accessibility and provides a hands-free experience by integrating **
 - Scalable for more gestures and commands  
 - User-friendly GUI
 
----
+
 
 ## ✅ Installation
 
@@ -83,7 +83,7 @@ It enhances accessibility and provides a hands-free experience by integrating **
 
 > Dependencies example: `opencv-python`, `mediapipe`, `SpeechRecognition`, `pyaudio`, `tensorflow` or `tflite-runtime`, `tkinter`.
 
----
+
 
 ## 🏃 Run the App
 
@@ -91,7 +91,7 @@ It enhances accessibility and provides a hands-free experience by integrating **
 - For gesture debugging: `python modules/gesture_module.py`
 - For voice testing: `python modules/voice_module.py`
 
----
+
 
 ## ⚡ Gesture Accuracy — Tips
 
@@ -101,7 +101,7 @@ It enhances accessibility and provides a hands-free experience by integrating **
 - Apply **smoothing**: trigger gestures only after N consecutive frames.  
 - Optional: perform **user-specific calibration** for best results.
 
----
+
 
 ## 👤 Author
 
