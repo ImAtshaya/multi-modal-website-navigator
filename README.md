@@ -74,28 +74,28 @@ It enhances accessibility and provides a hands-free experience by integrating **
 ---
 
 ## ✅ Installation
-# Create virtual environment
+Create virtual environment
 python -m venv venv
-# Activate environment
-# Windows
+Activate environment
+Windows
 venv\Scripts\activate
-# Linux/Mac
+Linux/Mac
 source venv/bin/activate
-# Install dependencies
+Install dependencies
 pip install -r requirements.txt
-#Dependencies example:
+Dependencies example:
 opencv-python, mediapipe, SpeechRecognition, pyaudio, tensorflow or tflite-runtime, tkinter.
 
 ---
 
 ## 🏃 Run the App
-# Main GUI
+Main GUI
 python main_gui.py
 
-# For gesture debugging
+For gesture debugging
 python gesture_module.py
 
-# For voice testing
+For voice testing
 python voice_module.py
 
 ---
