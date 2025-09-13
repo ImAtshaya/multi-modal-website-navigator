@@ -73,32 +73,6 @@ It enhances accessibility and provides a hands-free experience by integrating **
 
 ---
 
-## ✅ Applications
-- Accessibility tools for differently-abled users  
-- Smart kiosk systems  
-- Hands-free browsing in AR/VR setups  
-- Home automation control interface  
-
----
-
-## 📈 Future Enhancements
-- Add support for more gestures and voice commands  
-- Use ML for custom gesture training  
-- Integrate with browsers for tab control, scrolling, etc.  
-- Add speech synthesis for feedback  
-- Deploy as a desktop app using PyInstaller  
-
----
-
-## 👤 Who Will Use This?
-- **Differently-Abled Individuals:** Alternative input methods for navigation.  
-- **Elderly Users:** Simplifies browsing without complex navigation.  
-- **Tech Enthusiasts/Developers:** Build smart interfaces with multi-modal AI.  
-- **Smart Home or Kiosk Systems:** Intuitive, hands-free browsing.  
-- **Educational Institutions:** Demonstrates HCI, AI, and assistive tech applications.
-
----
-
 ## ✅ Installation
 
 ```bash
@@ -112,4 +86,51 @@ venv\Scripts\activate
 source venv/bin/activate
 
 # Install dependencies
+
+---
+
 pip install -r requirements.txt
+## 🏃 Run the App
+# Main GUI
+python main_gui.py
+
+# For gesture debugging
+python gesture_module.py
+
+# For voice testing
+python voice_module.py
+
+---
+
+##📂 Project Structure
+├─ README.md
+├─ requirements.txt
+├─ main_gui.py
+├─ modules/
+│  ├─ voice_module.py
+│  ├─ text_module.py
+│  ├─ gesture_module.py
+│  └─ utils.py
+└─ assets/
+   └─ icons/
+
+---
+
+⚡ Gesture Accuracy — Tips
+
+Ensure good lighting and high contrast.
+
+Keep camera at eye/shoulder level; avoid backlight.
+
+Adjust MediaPipe min_detection_confidence / min_tracking_confidence.
+
+Apply smoothing (require N consecutive frames before triggering).
+
+Optional calibration for user-specific gestures.
+
+---
+
+#👤 Author
+Atshaya  
+https://github.com/ImAtshaya  
+
