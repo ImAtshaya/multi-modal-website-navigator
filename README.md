@@ -74,22 +74,20 @@ It enhances accessibility and provides a hands-free experience by integrating **
 ---
 
 ## ✅ Installation
-
-```bash
 # Create virtual environment
 python -m venv venv
-
 # Activate environment
 # Windows
 venv\Scripts\activate
 # Linux/Mac
 source venv/bin/activate
-
 # Install dependencies
+pip install -r requirements.txt
+#Dependencies example:
+opencv-python, mediapipe, SpeechRecognition, pyaudio, tensorflow or tflite-runtime, tkinter.
 
 ---
 
-pip install -r requirements.txt
 ## 🏃 Run the App
 # Main GUI
 python main_gui.py
@@ -116,16 +114,12 @@ python voice_module.py
 
 ---
 
-⚡ Gesture Accuracy — Tips
+##⚡ Gesture Accuracy — Tips
 
 Ensure good lighting and high contrast.
-
 Keep camera at eye/shoulder level; avoid backlight.
-
 Adjust MediaPipe min_detection_confidence / min_tracking_confidence.
-
 Apply smoothing (require N consecutive frames before triggering).
-
 Optional calibration for user-specific gestures.
 
 ---
