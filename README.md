@@ -74,52 +74,36 @@ It enhances accessibility and provides a hands-free experience by integrating **
 ---
 
 ## ✅ Installation
--Create virtual environment
-python -m venv venv
 
--Activate environment
+- Create virtual environment: `python -m venv venv`
+- Activate environment:
+  - Windows: `venv\Scripts\activate`
+  - Linux/Mac: `source venv/bin/activate`
+- Install dependencies: `pip install -r requirements.txt`
 
--Windows
-venv\Scripts\activate
-
--Linux/Mac
-source venv/bin/activate
-
--Install dependencies
-pip install -r requirements.txt
-
--Dependencies example:
-opencv-python, mediapipe, SpeechRecognition, pyaudio, tensorflow or tflite-runtime, tkinter.
+> Dependencies example: `opencv-python`, `mediapipe`, `SpeechRecognition`, `pyaudio`, `tensorflow` or `tflite-runtime`, `tkinter`.
 
 ---
 
 ## 🏃 Run the App
--Main GUI
-python main_gui.py
 
--For gesture debugging
-python gesture_module.py
-
--For voice testing
-python voice_module.py
+- Launch the main GUI: `python main_gui.py`
+- For gesture debugging: `python modules/gesture_module.py`
+- For voice testing: `python modules/voice_module.py`
 
 ---
 
-##⚡ Gesture Accuracy — Tips
+## ⚡ Gesture Accuracy — Tips
 
--Ensure good lighting and high contrast.
-
--Keep camera at eye/shoulder level; avoid backlight.
-
--Adjust MediaPipe min_detection_confidence / min_tracking_confidence.
-
--Apply smoothing (require N consecutive frames before triggering).
-
--Optional calibration for user-specific gestures.
+- Ensure **good lighting** and high contrast.  
+- Keep camera at **eye/shoulder level**; avoid backlight.  
+- Adjust MediaPipe parameters: `min_detection_confidence` / `min_tracking_confidence`.  
+- Apply **smoothing**: trigger gestures only after N consecutive frames.  
+- Optional: perform **user-specific calibration** for best results.
 
 ---
 
-#👤 Author
-Atshaya  
-https://github.com/ImAtshaya  
+## 👤 Author
 
+**Name:** Atshaya  
+**GitHub:** [https://github.com/ImAtshaya](https://github.com/ImAtshaya)
